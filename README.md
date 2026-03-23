@@ -36,6 +36,7 @@ O projeto simula um cenário real de backend, aplicando conceitos utilizados no 
 O projeto segue o padrão em camadas:  
 
 
+Controller → Service → Repository → Entity
 
 
 **Responsabilidades:**
@@ -65,6 +66,7 @@ O projeto segue o padrão em camadas:
 
 ---
 
+
 ## ⚙️ Funcionalidades
 
 ### Usuários
@@ -91,6 +93,7 @@ O projeto segue o padrão em camadas:
 
 ---
 
+
 ## ⚠️ Tratamento de erros
 
 - Exceções globais via `@ControllerAdvice`  
@@ -108,6 +111,7 @@ O projeto segue o padrão em camadas:
 
 ---
 
+
 ## 📄 Documentação da API (Swagger)
 
 Após iniciar a aplicação, acesse:  
@@ -119,6 +123,7 @@ Permite:
 - Conferir estrutura de request/response  
 
 ---
+
 
 ## 🗄️ Banco de dados (H2)
 
@@ -141,6 +146,7 @@ O projeto possui cobertura de testes:
 
 ---
 
+
 ## 💡 Boas práticas aplicadas
 
 - Princípios **SOLID**  
@@ -152,6 +158,7 @@ O projeto possui cobertura de testes:
 - Segurança com JWT e roles  
 
 ---
+
 
 ## 🚀 Como executar o projeto
 
@@ -166,6 +173,9 @@ cd api-pagamento
 ./mvnw spring-boot:run
 
 
+Exemplos de requisição
+Registrar usuário:
+
 POST /auth/registro
 {
   "username": "admin",
@@ -173,6 +183,7 @@ POST /auth/registro
   "role": "ADMIN"
 }
 
+Login e gerar token:
 
 POST /auth/login
 {
@@ -180,18 +191,24 @@ POST /auth/login
   "password": "123"
 }
 
+Resposta:
 {
   "token": "eyJhbGciOiJIUzI1NiJ9..."
 }
 
+Enviar token nos headers para endpoints protegidos:
+
 Authorization: Bearer <TOKEN>
 
+---
 
 📈 Melhorias futuras
 Deploy em ambiente cloud (AWS / Render)
 Integração com gateway de pagamento
 Migração para banco relacional (PostgreSQL)
 Documentação avançada da API
+
+---
 
 👨‍💻 Autor
 
